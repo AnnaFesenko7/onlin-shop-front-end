@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/onlin-shop-front-end/static/css/main.7acaea2f.css",
+    "main.js": "/onlin-shop-front-end/static/js/main.07d3183d.js",
+    "index.html": "/onlin-shop-front-end/index.html",
+    "main.7acaea2f.css.map": "/onlin-shop-front-end/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/onlin-shop-front-end/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
