@@ -7,7 +7,7 @@ import { FlexBox, StyledNav } from './Header.styled';
 export const Header = () => {
   return (
     <header>
-      <StyledContainer header>
+      <StyledContainer>
         <FlexBox>
           <StyledNav>
             <CustomLink to="/" icon={FaHome} />

@@ -1,48 +1,137 @@
+import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { FormikControl } from './FormikControl';
 import * as Yup from 'yup';
 
-import './FormikComponent.css';
+import { Button } from 'components/StyledButton/StyledButton ';
 
 const initialValues = {
-  email: '',
+  productName: '',
+  brand: '',
+  image: '',
   description: '',
-  selectOption: '',
-  radioOption: '',
-  checkboxOption: [],
-  birthDate: '',
-};
-
-const onSubmit = (values, submitProps) => {
-  console.log(values);
+  category: '',
+  subcategory: '',
+  createdFor: [],
+  price: '',
 };
 
 const validationSchema = Yup.object({
-  name: Yup.string().string().required('Required'),
+  productName: Yup.string().required('Required'),
+  brand: Yup.string().required('Required'),
+  image: Yup.mixed().nullable().required('Required'),
   description: Yup.string().required('Required'),
-  selectOption: Yup.string().required('Required'),
-  radioOption: Yup.string().required('Required'),
-  checkboxOption: Yup.array().required('Required'),
-  birthDate: Yup.date().required('Required').nullable(),
+  category: Yup.string().required('Required'),
+  subcategory: Yup.string().required('Required'),
+  createdFor: Yup.array().required('Required'),
+  price: Yup.number().required('Required'),
 });
 
 const dropDownOptions = [
-  { key: 'Select an option', value: '' },
-  { key: 'Option 1', value: 'option1' },
-  { key: 'Option 2', value: 'option2' },
-  { key: 'Option 3', value: 'option3' },
+  { key: 'Select a category', value: '' },
+  {
+    key: 'Макіяж',
+    value: 'make-up',
+    subcategory: [
+      { key: 'Select a category', value: '' },
+      { key: 'Очі', value: 'eyes' },
+      { key: 'Брови', value: 'eyebrows' },
+      { key: 'Губи', value: 'lips' },
+      { key: 'Обличчя', value: 'face' },
+    ],
+  },
+  {
+    key: 'Волосся',
+    value: 'hairy',
+    subcategory: [
+      { key: 'Select a subcategory', value: '' },
+      { key: 'Бальзами', value: 'balms' },
+      { key: 'Кондиціонери', value: 'hair conditioners' },
+      { key: 'Шампуні', value: 'shampoos' },
+      { key: 'Олія', value: 'oil' },
+      { key: 'Гребінці, щітки', value: 'brushes' },
+    ],
+  },
+  {
+    key: 'Тіло & Ванна',
+    value: 'body',
+    subcategory: [
+      { key: 'Select a subcategory', value: '' },
+      { key: 'Очі', value: 'eyes' },
+      { key: 'Брови', value: 'eyebrows' },
+      { key: 'Губи', value: 'lips' },
+      { key: 'Обличчя', value: 'face' },
+    ],
+  },
+  {
+    key: 'Парфумерія',
+    value: 'perfumery',
+    subcategory: [
+      { key: 'Select a subcategory', value: '' },
+      { key: 'Очі', value: 'eyes' },
+      { key: 'Брови', value: 'eyebrows' },
+      { key: 'Губи', value: 'lips' },
+      { key: 'Обличчя', value: 'face' },
+    ],
+  },
+  {
+    key: 'Подарунки',
+    value: 'gifts',
+    subcategory: [
+      { key: 'Select a subcategory', value: '' },
+      { key: 'Очі', value: 'eyes' },
+      { key: 'Брови', value: 'eyebrows' },
+      { key: 'Губи', value: 'lips' },
+      { key: 'Обличчя', value: 'face' },
+    ],
+  },
+  {
+    key: "Здоров'я & Турбота",
+    value: 'health',
+    subcategory: [
+      { key: 'Select a subcategory', value: '' },
+      { key: 'Очі', value: 'eyes' },
+      { key: 'Брови', value: 'eyebrows' },
+      { key: 'Губи', value: 'lips' },
+      { key: 'Обличчя', value: 'face' },
+    ],
+  },
 ];
-const radioOptions = [
-  { key: 'Option 1', value: 'rOption1' },
-  { key: 'Option 2', value: 'rOption2' },
-  { key: 'Option 3', value: 'rOption3' },
-];
+
 const checkboxOptions = [
-  { key: 'Option 1', value: 'cOption1' },
-  { key: 'Option 2', value: 'cOption2' },
-  { key: 'Option 3', value: 'cOption3' },
+  { key: 'male', value: 'male' },
+  { key: 'female', value: 'female' },
 ];
-export const FormikWithReusableControls = () => {
+export const AdminForm = () => {
+  const [files, setFiles] = useState([]);
+
+  const onSubmit = (
+    {
+      productName,
+      category,
+      subcategory,
+      createdFor,
+      description,
+      brand,
+      price,
+    },
+    submitProps
+  ) => {
+    const data = new FormData();
+    data.append(`image`, files[0]);
+    data.append(`productName`, productName);
+    data.append(`category`, category);
+    data.append(`brand`, brand);
+    data.append(`description`, description);
+    data.append(`createdFor`, createdFor);
+    data.append(`price`, price);
+    data.append(`subcategory`, subcategory);
+    data.forEach((value, name) => {
+      console.log('name', name);
+      console.log('value', value);
+    });
+  };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -51,13 +140,27 @@ export const FormikWithReusableControls = () => {
       validateOnMount
     >
       {formik => {
+        console.log(formik);
         return (
-          <Form>
+          <Form encType="multipart/form-data">
             <FormikControl
               control="input"
-              label="Email"
-              name="email"
-              type="email"
+              label="Product"
+              name="productName"
+              type="text"
+            />
+            <FormikControl
+              control="input"
+              label="Brand"
+              name="brand"
+              type="text"
+            />
+            <FormikControl
+              control="inputFile"
+              label="Image"
+              name="image"
+              type="file"
+              setFiles={setFiles}
             />
             <FormikControl
               control="textarea"
@@ -67,28 +170,34 @@ export const FormikWithReusableControls = () => {
             />
             <FormikControl
               control="select"
-              label="Select a topic"
-              name="selectOption"
+              label="Select a category"
+              name="category"
               options={dropDownOptions}
             />
             <FormikControl
-              control="radio"
-              label="Pick one option"
-              name="radioOption"
-              options={radioOptions}
+              control="select"
+              label="Select a subcategory"
+              name="subcategory"
+              options={
+                dropDownOptions.find(
+                  option => option.value === formik.values.category
+                )?.subcategory
+              }
+              disabled={formik.values.category === ''}
             />
             <FormikControl
               control="checkbox"
-              label="Checkbox topic"
-              name="checkboxOption"
+              label="Product created for"
+              name="createdFor"
               options={checkboxOptions}
             />
             <FormikControl
-              control="date"
-              label="Pick a date"
-              name="birthDate"
+              control="input"
+              label="Price"
+              name="price"
+              type="number"
             />
-            <button type="submit">Submit</button>
+            <Button type="submit" textContent="Submit" size={400} />
           </Form>
         );
       }}

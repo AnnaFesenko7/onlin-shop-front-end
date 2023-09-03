@@ -1,9 +1,9 @@
-import { Input } from './Input';
-import { Textarea } from './Textarea';
-import { Select } from './Select';
-import { RadioButtons } from './RadioButtons';
-import { CheckboxGroup } from './Checkbox';
-import { DatePicker } from './DatePicker';
+import { Input } from 'components/controls/Input';
+import { Textarea } from 'components/controls/Textarea';
+import { Select } from 'components/controls/Select';
+import { RadioButtons } from 'components/controls/RadioButtons';
+import { CheckboxGroup } from 'components/controls/Checkbox';
+import { InputFile } from 'components/controls/InputFile.js';
 
 export const FormikControl = props => {
   const { control, ...rest } = props;
@@ -18,8 +18,9 @@ export const FormikControl = props => {
       return <RadioButtons {...rest} />;
     case 'checkbox':
       return <CheckboxGroup {...rest} />;
-    case 'date':
-      return <DatePicker {...rest} />;
+    case 'inputFile':
+      return <InputFile {...rest} />;
+
     default:
       return null;
   }
