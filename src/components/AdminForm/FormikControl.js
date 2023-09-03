@@ -4,6 +4,7 @@ import { Select } from 'components/controls/Select';
 import { RadioButtons } from 'components/controls/RadioButtons';
 import { CheckboxGroup } from 'components/controls/Checkbox';
 import { InputFile } from 'components/controls/InputFile.js';
+import { InputList } from 'components/controls/InputsList';
 
 export const FormikControl = props => {
   const { control, ...rest } = props;
@@ -20,6 +21,8 @@ export const FormikControl = props => {
       return <CheckboxGroup {...rest} />;
     case 'inputFile':
       return <InputFile {...rest} />;
+    case 'inputList':
+      return <InputList {...rest} />;
 
     default:
       return null;

@@ -14,6 +14,7 @@ const initialValues = {
   subcategory: '',
   createdFor: [],
   price: '',
+  tags: [''],
 };
 
 const validationSchema = Yup.object({
@@ -196,6 +197,12 @@ export const AdminForm = () => {
               label="Price"
               name="price"
               type="number"
+            />
+            <FormikControl
+              control="inputList"
+              label="List of tags"
+              name="tags"
+              type="text"
             />
             <Button type="submit" textContent="Submit" size={400} />
           </Form>
