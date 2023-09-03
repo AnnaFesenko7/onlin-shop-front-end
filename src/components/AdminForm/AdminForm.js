@@ -20,7 +20,7 @@ const initialValues = {
 const validationSchema = Yup.object({
   productName: Yup.string().required('Required'),
   brand: Yup.string().required('Required'),
-  image: Yup.mixed().nullable().required('Required'),
+  image: Yup.mixed().nullable(),
   description: Yup.string().required('Required'),
   category: Yup.string().required('Required'),
   subcategory: Yup.string().required('Required'),
@@ -58,10 +58,16 @@ const dropDownOptions = [
     value: 'body',
     subcategory: [
       { key: 'Select a subcategory', value: '' },
-      { key: 'Очі', value: 'eyes' },
-      { key: 'Брови', value: 'eyebrows' },
-      { key: 'Губи', value: 'lips' },
-      { key: 'Обличчя', value: 'face' },
+      { key: 'Масла та олії', value: 'oils for body' },
+      { key: 'Засмага & SPF', value: 'suntan & SPF' },
+      { key: 'Косметика для тіла', value: 'body cosmetics' },
+      {
+        key: 'Дезодоранти & Антиперспіранти',
+        value: 'deodorants & antiperspirants',
+      },
+      { key: 'Гоління & Епіляція', value: 'shaving & epilation' },
+      { key: 'Гігієна', value: 'hygiene' },
+      { key: 'Ванна & Душ', value: 'bath & shower' },
     ],
   },
   {
@@ -69,10 +75,9 @@ const dropDownOptions = [
     value: 'perfumery',
     subcategory: [
       { key: 'Select a subcategory', value: '' },
-      { key: 'Очі', value: 'eyes' },
-      { key: 'Брови', value: 'eyebrows' },
-      { key: 'Губи', value: 'lips' },
-      { key: 'Обличчя', value: 'face' },
+      { key: 'Одеколони', value: 'colognes' },
+      { key: 'Аромати для дому', value: 'aromas for the home' },
+      { key: 'Парфумована вода', value: 'perfumed water' },
     ],
   },
   {
@@ -80,10 +85,8 @@ const dropDownOptions = [
     value: 'gifts',
     subcategory: [
       { key: 'Select a subcategory', value: '' },
-      { key: 'Очі', value: 'eyes' },
-      { key: 'Брови', value: 'eyebrows' },
-      { key: 'Губи', value: 'lips' },
-      { key: 'Обличчя', value: 'face' },
+      { key: 'Сертифікат', value: 'certificate' },
+      { key: 'Набори', value: 'gift sets' },
     ],
   },
   {
@@ -91,10 +94,9 @@ const dropDownOptions = [
     value: 'health',
     subcategory: [
       { key: 'Select a subcategory', value: '' },
-      { key: 'Очі', value: 'eyes' },
-      { key: 'Брови', value: 'eyebrows' },
-      { key: 'Губи', value: 'lips' },
-      { key: 'Обличчя', value: 'face' },
+      { key: 'Дерматокосметика', value: 'dermatocosmetics' },
+      { key: 'Інтимні товари', value: 'intimate goods' },
+      { key: 'Зуби', value: 'teeth' },
     ],
   },
 ];
