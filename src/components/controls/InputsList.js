@@ -18,10 +18,6 @@ export const InputList = props => {
 
           const options = values[`${name}`];
 
-          console.log(
-            '🚀 ~ file: InputsList.js:21 ~ InputList ~ options:',
-            options
-          );
           return (
             <div>
               {options.map((option, index) => (

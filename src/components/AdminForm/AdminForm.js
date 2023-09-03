@@ -115,6 +115,7 @@ export const AdminForm = () => {
       description,
       brand,
       price,
+      tags,
     },
     submitProps
   ) => {
@@ -127,10 +128,11 @@ export const AdminForm = () => {
     data.append(`createdFor`, createdFor);
     data.append(`price`, price);
     data.append(`subcategory`, subcategory);
-    data.forEach((value, name) => {
-      console.log('name', name);
-      console.log('value', value);
-    });
+    data.append(`tags`, tags);
+    // data.forEach((value, name) => {
+    //   console.log('name', name);
+    //   console.log('value', value);
+    // });
   };
 
   return (
