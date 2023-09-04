@@ -109,8 +109,7 @@ const checkboxOptions = [
   { key: 'male', value: 'male' },
   { key: 'female', value: 'female' },
 ];
-export const AdminForm = ({ data, isEditing }) => {
-  console.log(isEditing); // put or post request
+export const AdminForm = ({ data, isEditing, closeOnSubmit }) => {
   const [files, setFiles] = useState([]);
 
   const onSubmit = (
@@ -140,6 +139,8 @@ export const AdminForm = ({ data, isEditing }) => {
     //   console.log('name', name);
     //   console.log('value', value);
     // });
+    isEditing && closeOnSubmit();
+
   };
 
   return (

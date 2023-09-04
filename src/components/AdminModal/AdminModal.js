@@ -45,7 +45,7 @@ export const AdminModal = ({ data }) => {
             <ButtonOpen onClick={openModal}>Редагувати товар</ButtonOpen>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}>
                 <h3>Редагувати товар</h3>
-                <AdminForm data={TestData} isEditing={true} ></AdminForm>
+                <AdminForm data={TestData} closeOnSubmit={closeModal} isEditing={true} ></AdminForm>
                 <ButtonClose onClick={closeModal}>
                     x
                 </ButtonClose>
