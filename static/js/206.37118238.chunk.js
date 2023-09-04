@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkonlin_shop_front_end=self.webpackChunkonlin_shop_front_end||[]).push([[206],{206:function(n,e,o){o.r(e);var r=o(104),s=o(184);e.default=function(){return(0,s.jsx)(r.P,{children:(0,s.jsx)("h1",{children:"HomePage"})})}}}]);
-//# sourceMappingURL=206.37118238.chunk.js.map
