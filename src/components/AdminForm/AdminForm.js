@@ -26,6 +26,7 @@ const validationSchema = Yup.object({
   subcategory: Yup.string().required('Required'),
   createdFor: Yup.array().required('Required'),
   price: Yup.number().required('Required'),
+  tags: Yup.array().required('Required'),
 });
 
 const dropDownOptions = [

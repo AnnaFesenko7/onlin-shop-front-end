@@ -43,9 +43,3 @@ export const InputList = props => {
     </AdminControlWrapper>
   );
 };
-
-//   <div className="control">
-//     <label>List of phone numbers</label>
-
-//     <ErrorMessage name="phNumbers" component={TextError} />
-//   </div>;
