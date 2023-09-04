@@ -5,8 +5,6 @@ import { AdminForm } from 'components/AdminForm/AdminForm';
 
 import { ButtonClose, ButtonOpen } from './AdminModal.styled'
 
-
-
 const customStyles = {
     content: {
         top: '50%',
@@ -17,8 +15,6 @@ const customStyles = {
         transform: 'translate(-50%, -50%)',
     },
 };
-
-
 
 export const AdminModal = ({ data }) => {
 
@@ -44,13 +40,12 @@ export const AdminModal = ({ data }) => {
         tags: ['крем'],
     }
 
-
     return (
         <div>
             <ButtonOpen onClick={openModal}>Редагувати товар</ButtonOpen>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}>
                 <h3>Редагувати товар</h3>
-                <AdminForm data={TestData} ></AdminForm>
+                <AdminForm data={TestData} isEditing={true} ></AdminForm>
                 <ButtonClose onClick={closeModal}>
                     x
                 </ButtonClose>

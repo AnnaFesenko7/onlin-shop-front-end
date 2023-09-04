@@ -109,8 +109,8 @@ const checkboxOptions = [
   { key: 'male', value: 'male' },
   { key: 'female', value: 'female' },
 ];
-export const AdminForm = ({ data }) => {
-
+export const AdminForm = ({ data, isEditing }) => {
+  console.log(isEditing); // put or post request
   const [files, setFiles] = useState([]);
 
   const onSubmit = (
