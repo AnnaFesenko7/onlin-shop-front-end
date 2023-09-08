@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { FormikControl } from './FormikControl';
+
 import * as Yup from 'yup';
 
+
 import { Button } from 'components/StyledButton/StyledButton ';
+
+
 
 const initialValues = {
   productName: '',
@@ -106,7 +110,7 @@ const checkboxOptions = [
   { key: 'male', value: 'male' },
   { key: 'female', value: 'female' },
 ];
-export const AdminForm = () => {
+export const AdminForm = ({ data, isEditing, closeOnSubmit }) => {
   const [files, setFiles] = useState([]);
 
   const onSubmit = (
@@ -136,17 +140,18 @@ export const AdminForm = () => {
     //   console.log('name', name);
     //   console.log('value', value);
     // });
+    isEditing && closeOnSubmit();
+
   };
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={(data) ? data : initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
       validateOnMount
     >
       {formik => {
-        console.log(formik);
         return (
           <Form encType="multipart/form-data">
             <FormikControl
@@ -209,7 +214,7 @@ export const AdminForm = () => {
               name="tags"
               type="text"
             />
-            <Button type="submit" textContent="Submit" size={400} />
+            <Button type="submit" textContent={(data) ? "Save" : "Submit"} size={400} />
           </Form>
         );
       }}

@@ -6,7 +6,7 @@ const AdminPage = () => {
     <>
       <StyledContainer>
         <h1>AdminPage</h1>
-        <AdminForm />
+        <AdminForm isEditing={false} />
       </StyledContainer>
     </>
   );
