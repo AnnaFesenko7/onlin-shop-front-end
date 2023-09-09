@@ -53,7 +53,7 @@ export const ProductCatalog = () => {
             //   navigate(`/about/${product._id}`);
             // }}
           >
-            <Image src={product.image?.url} height="200" />
+            <Image src={product.productImage?.url} height="200" />
             <Thumb>
               <Brand>{product.brand}</Brand>
               <Product>{product.productName}</Product>
