@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/onlin-shop-front-end/static/css/main.7cda0caf.css",
-    "main.js": "/onlin-shop-front-end/static/js/main.40593b95.js",
-    "static/js/466.60beb080.chunk.js": "/onlin-shop-front-end/static/js/466.60beb080.chunk.js",
+    "main.js": "/onlin-shop-front-end/static/js/main.519b4d20.js",
+    "static/js/466.85db21d2.chunk.js": "/onlin-shop-front-end/static/js/466.85db21d2.chunk.js",
     "static/js/341.478ce3ca.chunk.js": "/onlin-shop-front-end/static/js/341.478ce3ca.chunk.js",
     "static/js/918.19818077.chunk.js": "/onlin-shop-front-end/static/js/918.19818077.chunk.js",
     "static/js/41.7765e7d9.chunk.js": "/onlin-shop-front-end/static/js/41.7765e7d9.chunk.js",
     "index.html": "/onlin-shop-front-end/index.html",
     "main.7cda0caf.css.map": "/onlin-shop-front-end/static/css/main.7cda0caf.css.map",
-    "main.40593b95.js.map": "/onlin-shop-front-end/static/js/main.40593b95.js.map",
-    "466.60beb080.chunk.js.map": "/onlin-shop-front-end/static/js/466.60beb080.chunk.js.map",
+    "main.519b4d20.js.map": "/onlin-shop-front-end/static/js/main.519b4d20.js.map",
+    "466.85db21d2.chunk.js.map": "/onlin-shop-front-end/static/js/466.85db21d2.chunk.js.map",
     "341.478ce3ca.chunk.js.map": "/onlin-shop-front-end/static/js/341.478ce3ca.chunk.js.map",
     "918.19818077.chunk.js.map": "/onlin-shop-front-end/static/js/918.19818077.chunk.js.map",
     "41.7765e7d9.chunk.js.map": "/onlin-shop-front-end/static/js/41.7765e7d9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.40593b95.js"
+    "static/js/main.519b4d20.js"
   ]
 }
