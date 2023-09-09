@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'http://localhost:4040/api',
-  // baseURL: 'https://book-reader-jr3w.onrender.com/api',
+  // baseURL: 'http://localhost:4040/api',
+  baseURL: 'https://online-shop-1sss.onrender.com/api',
 });
 
 export const setToken = token => {

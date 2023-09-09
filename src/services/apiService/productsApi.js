@@ -1,21 +1,17 @@
 import { instance } from './axiosInstance';
 
 export async function fetchProducts() {
-  const response = await instance('/');
+  const response = await instance('/products');
 
-  return response.data.payload.books;
+  return response.data.payload.products;
 }
 
-export async function fetchProductId(bookId) {
-  const response = await instance(`/books/${bookId}?_expand=author`);
+export async function fetchProductId(productId) {
+  const response = await instance(`/products/${productId}`);
   return response.data;
 }
-export async function addBook(newBook) {
-  const response = await instance.post('/books', newBook);
+export async function addProduct(newProduct) {
+  const response = await instance.post('/products', newProduct);
 
-  return response.data.payload.book;
-}
-export async function updateBook(feedback, id) {
-  const response = await instance.patch(`/books/opinion/${id}`, feedback);
-  return response.data.payload.updatedBook;
+  return response.data;
 }
