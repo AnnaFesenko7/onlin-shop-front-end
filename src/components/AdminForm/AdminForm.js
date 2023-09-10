@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { FormikControl } from './FormikControl';
+import { addProduct } from '../../services/apiService/productsApi';
 
 import * as Yup from 'yup';
 
-
 import { Button } from 'components/StyledButton/StyledButton ';
-
-
 
 const initialValues = {
   productName: '',
@@ -140,13 +138,13 @@ export const AdminForm = ({ data, isEditing, closeOnSubmit }) => {
     //   console.log('name', name);
     //   console.log('value', value);
     // });
+    addProduct(data);
     isEditing && closeOnSubmit();
-
   };
 
   return (
     <Formik
-      initialValues={(data) ? data : initialValues}
+      initialValues={data ? data : initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
       validateOnMount
@@ -214,7 +212,11 @@ export const AdminForm = ({ data, isEditing, closeOnSubmit }) => {
               name="tags"
               type="text"
             />
-            <Button type="submit" textContent={(data) ? "Save" : "Submit"} size={400} />
+            <Button
+              type="submit"
+              textContent={data ? 'Save' : 'Submit'}
+              size={400}
+            />
           </Form>
         );
       }}

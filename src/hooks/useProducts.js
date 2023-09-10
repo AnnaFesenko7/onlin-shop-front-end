@@ -1,6 +1,6 @@
 // import { useReducer } from 'react';
 import { useEffect, useState, useCallback } from 'react';
-import { fetchProducts } from '../services/apiService/productsApi';
+import { fetchProducts, addProduct } from '../services/apiService/productsApi';
 // import { useLimit } from './useLimit';
 // import { useNavigate } from 'react-router-dom';
 
