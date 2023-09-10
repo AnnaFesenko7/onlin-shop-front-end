@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkonlin_shop_front_end=self.webpackChunkonlin_shop_front_end||[]).push([[341],{341:function(n,e,s){s.r(e);var i=s(8279),r=s(3104),t=s(184);e.default=function(){return(0,t.jsx)(t.Fragment,{children:(0,t.jsxs)(r.P,{children:[(0,t.jsx)("h1",{children:"AdminPage"}),(0,t.jsx)(i.R,{isEditing:!1})]})})}}}]);
+//# sourceMappingURL=341.91cd77d7.chunk.js.map
