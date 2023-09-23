@@ -1,7 +1,7 @@
 import { StyledContainer } from 'components/StyledContainer/StyledContainer.styled';
 import { CustomLink } from 'components/CustomLink/CustomLink';
 
-import { Wrapper, StyledNav, Logo } from './Header.styled';
+import { Wrapper, StyledNav } from './Header.styled';
 
 export const Header = () => {
   return (
