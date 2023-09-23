@@ -9,15 +9,15 @@ export const theme = {
   },
 
   fontSizes: {
-    ss: '10px',
+    ss: '8px',
     xs: '12px',
-    s: '14px',
-    xm: '16px',
+    s: '16px',
+    xm: '20px',
     m: '24px',
-    l: '32px',
-    xl: '40px',
-    xxl: '45px',
-    xxxl: '64px',
+    l: '28px',
+    xl: '32px',
+    xxl: '36px',
+    xxxl: '40px',
   },
   space: [2, 4, 8, 16, 24, 40, 64, 96, 128, 256],
   fonts: {
