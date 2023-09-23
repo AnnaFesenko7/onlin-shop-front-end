@@ -6,7 +6,6 @@ export const CustomLink = ({ children, icon: Icon, to, header, ...p }) => {
     return header === true ? 50 : 20;
   };
 
-  console.log('🚀 ~ file: CustomLink.js:5 ~ CustomLink ~ header:', header);
   const match = useMatch(to);
 
   return (
@@ -17,11 +16,6 @@ export const CustomLink = ({ children, icon: Icon, to, header, ...p }) => {
   );
 };
 const StyledLink = styled(Link)`
-  /* width: ${p => (p.icon ? p.theme.space[6] : p.theme.space[4])} px; */
-  /* height: ${p => (p.header ? p.theme.space[4] : p.theme.space[6])} px;
-  width: ${p => (p.header ? p.theme.space[4] : p.theme.space[6])} px; */
-  /* height: ${p => console.log(p)}; */
-  /* box-shadow: ${p => p.theme.boxShadow.main};  */
   padding: 5px;
   line-height: ${p => (p.header === 'true' ? p.theme.lineHeights.body : 0)};
   display: flex;
