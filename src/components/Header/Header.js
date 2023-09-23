@@ -8,8 +8,12 @@ export const Header = () => {
     <header>
       <StyledContainer>
         <Wrapper>
-          <Logo />
-          <img src="../image/cropped-InJoy_vertical-2.png" alt="logo" />
+          {/* <Logo /> */}
+          <img
+            src="image/cropped-InJoy_vertical-2.png"
+            alt="logo"
+            width={500}
+          />
           <StyledNav>
             <CustomLink header to="/">
               Головна
