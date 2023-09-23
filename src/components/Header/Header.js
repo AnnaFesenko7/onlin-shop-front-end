@@ -1,19 +1,24 @@
-import { FaAutoprefixer, FaHome } from 'react-icons/fa';
 import { StyledContainer } from 'components/StyledContainer/StyledContainer.styled';
 import { CustomLink } from 'components/CustomLink/CustomLink';
 
-import { FlexBox, StyledNav } from './Header.styled';
+import { Wrapper, StyledNav, Logo } from './Header.styled';
 
 export const Header = () => {
   return (
     <header>
       <StyledContainer>
-        <FlexBox>
+        <Wrapper>
+          <Logo />
+          <img src="../image/cropped-InJoy_vertical-2.png" alt="logo" />
           <StyledNav>
-            <CustomLink to="/" icon={FaHome} />
-            <CustomLink to="/admin" icon={FaAutoprefixer} />
+            <CustomLink header to="/">
+              Головна
+            </CustomLink>
+            <CustomLink header to="/">
+              Про нас
+            </CustomLink>
           </StyledNav>
-        </FlexBox>
+        </Wrapper>
       </StyledContainer>
     </header>
   );

@@ -2,8 +2,10 @@ export const theme = {
   colors: {
     white: '#ffffff',
     black: '#000000',
-    accentColor: '#FF6B08',
+    accentColor: '#46a136',
     iconColor: '#a6abb9',
+    bgColor: '#c9c9c9',
+    mainBgColor: '#ededed',
   },
 
   fontSizes: {
@@ -11,13 +13,13 @@ export const theme = {
     xs: '12px',
     s: '14px',
     xm: '16px',
-    m: '20px',
+    m: '24px',
     l: '32px',
     xl: '40px',
     xxl: '45px',
     xxxl: '64px',
   },
-  space: [2, 4, 8, 16, 20, 40, 64, 96, 128, 256],
+  space: [2, 4, 8, 16, 24, 40, 64, 96, 128, 256],
   fonts: {
     body: 'system-ui, sans-serif',
   },
